@@ -19,7 +19,7 @@
 
 ; calculate path of b as relative to a
 (defn relative-path [a b]
-    (let [	path-a (.toPath (io/file a))
+    (let [  path-a (.toPath (io/file a))
             path-b (.toPath (io/file b))
             can-relativize? (if (.getRoot path-a)
                                 (some? (.getRoot path-b))
@@ -42,7 +42,7 @@
             :block/properties
             { :ls-type :whiteboard-shape
                 :logseq.tldraw.shape
-                {	:type "logseq-portal"
+                {   :type "logseq-portal"
                     :id (str shape-uuid)
                     :pageId (str image-uuid)
                     :parentId (str parent-uuid)
@@ -91,7 +91,7 @@
             spacing 400
             new-blocks (flatten(map-indexed
                         (fn [idx img]
-                            (let [	image-uuid (uuid)
+                            (let [  image-uuid (uuid)
                                     shape-uuid (uuid)
                                     x (+ x0 (* (mod idx 5) spacing))
                                     y (+ y0 (* (quot idx 5) spacing)) ]
